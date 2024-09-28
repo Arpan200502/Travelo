@@ -66,3 +66,13 @@ timeline.from(".text h1", {
   document.addEventListener('gesturestart', function (e) {
     e.preventDefault(); // Prevent zooming on gesture
 });
+// Wait for the window to load
+window.addEventListener('load', function() {
+    // Get the loader element by its ID
+    const loader = document.getElementById('loader');
+    
+    // Set a timeout to hide the loader after 5 seconds
+    setTimeout(function() {
+        loader.style.display = 'none'; 
+    }, 1000); // 5000 milliseconds = 5 seconds
+});
