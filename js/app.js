@@ -63,4 +63,6 @@ timeline.from(".text h1", {
     duration: 1.5,
   }, "3");
   
-  
+  document.addEventListener('gesturestart', function (e) {
+    e.preventDefault(); // Prevent zooming on gesture
+});
