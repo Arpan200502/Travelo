@@ -407,3 +407,17 @@ main {
         width: 800px; /* Adjust width for all fog layers */
     }
 }
+@media (min-width: 1081px) {
+    .parallax {
+        /* Adjust the properties for parallax layers here */
+        /* Example: increase the size of the layers, or adjust positioning */
+        transform: scale(1.1); /* Example adjustment */
+    }
+
+    .text h1, .text h2 {
+        /* Ensure text scales appropriately */
+        font-size: calc(6rem + 2vw); /* Scale based on viewport width */
+    }
+
+    /* Adjust other elements as necessary to prevent cuts or gaps */
+}
