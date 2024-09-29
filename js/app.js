@@ -1,3 +1,30 @@
+// Prevent zooming with Ctrl + / Ctrl - or pinch zoom
+window.addEventListener('wheel', function(event) {
+    if (event.ctrlKey) {
+        event.preventDefault(); // Disable zooming
+    }
+}, { passive: false });
+
+
+
+
+document.addEventListener('keydown', function(event) {
+    if ((event.ctrlKey || event.metaKey) && (event.key === '+' || event.key === '-')) {
+        event.preventDefault();
+    }
+});
+
+// Prevent pinch zoom on touch devices
+document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+});
+
+
+
+
+
+
+
 const parallax_el = document.querySelectorAll(".parallax");
 
 let xValue = 0, yValue = 0;
@@ -76,3 +103,6 @@ window.addEventListener('load', function() {
         loader.style.display = 'none'; 
     }, 1000); // 5000 milliseconds = 5 seconds
 });
+window.onload = function() {
+    setTimeout(autoRefresh, 2000); // Refresh after 2 seconds
+};
