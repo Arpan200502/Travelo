@@ -1,4 +1,20 @@
 // Prevent zooming with Ctrl + / Ctrl - or pinch zoom
+document.addEventListener('keydown', (event) => {
+    // Check for F11 key
+    if (event.key === 'F11') {
+        event.preventDefault(); // Prevent default action (full screen)
+        alert('Full-screen mode is not allowed on this site.');
+    }
+});
+
+
+document.addEventListener('fullscreenchange', () => {
+    if (document.fullscreenElement) {
+        alert('Full-screen mode is not allowed on this site.');
+        document.exitFullscreen(); // Exit full-screen mode
+    }
+});
+
 window.addEventListener('wheel', function(event) {
     if (event.ctrlKey) {
         event.preventDefault(); // Disable zooming
